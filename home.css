@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     --primary: #2d3e30;
     --accent: #f2a93b;

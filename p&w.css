@@ -1,3 +1,72 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* Modal (Background) */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 2000;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(26, 26, 26, 0.9); /* #1a1a1a with transparency */
+    backdrop-filter: blur(5px);
+}
+
+/* Image Inside Modal */
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 15px;
+    border: 3px solid var(--accent);
+    animation: zoomIn 0.3s ease;
+}
+
+/* Caption Text */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    text-align: center;
+    color: var(--white);
+    padding: 20px 0;
+    font-weight: 600;
+}
+
+/* Close Button */
+.close-modal {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    color: var(--white);
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@keyframes zoomIn {
+    from {transform: scale(0.5); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+}
+
+/* Style for the active link detected by JS */
+.floating-nav a.active-link {
+    background: var(--primary);
+    color: var(--white) !important;
+    padding: 8px 18px;
+    border-radius: 25px;
+}
+
+/* Ensure the image container handles the zoom effect from JS */
+.ws-img {
+    overflow: hidden;
+}
+
 :root {
     --primary: #2d3e30;
     --accent: #f2a93b;
