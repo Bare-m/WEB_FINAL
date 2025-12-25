@@ -1,0 +1,191 @@
+:root {
+    --primary: #2d3e30;
+    --accent: #f2a93b;
+    --bg-color: #f4eee0;
+    --text-main: #2d3e30;
+    --white: #ffffff;
+    --gray-light: #e0d9cc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Floating Navigation */
+.floating-nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--white);
+    padding: 10px 30px;
+    border-radius: 50px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+
+.floating-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.floating-nav a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.floating-nav .active a {
+    background: var(--text-main);
+    color: var(--white);
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+/* Container & Titles */
+.work-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 20px;
+}
+
+.group-title {
+    color: var(--primary);
+    margin: 40px 0 20px;
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--gray-light);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Featured Project Cards (Vertical Style) */
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.project-card-large {
+    background: var(--white);
+    border: 1px solid var(--primary); /* Dark Green border like your sample */
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.project-card-large:hover {
+    box-shadow: 0 10px 30px rgba(45, 62, 48, 0.15);
+}
+
+.project-img img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    background: var(--gray-light);
+}
+
+.project-info {
+    padding: 25px;
+    position: relative;
+}
+
+/* Amber accent line across the card */
+.project-info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 25px;
+    width: 100px;
+    height: 4px;
+    background: var(--accent);
+}
+
+.project-info h3 { color: var(--text-main); margin-bottom: 10px; }
+.project-info p { font-size: 0.9rem; color: #555; }
+
+.project-tags {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.project-tags span {
+    font-size: 0.75rem;
+    font-weight: 700;
+    background: var(--bg-color);
+    padding: 4px 10px;
+    border-radius: 5px;
+}
+
+/* Workshop Grid (3 Columns) */
+/* Ensure the grid doesn't give the first item extra space */
+.workshop-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px; /* Consistent spacing between all boxes */
+    align-items: stretch; /* Makes all boxes the same height */
+}
+
+.workshop-box {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    border: 1px solid transparent; /* Keeps sizing consistent if you add a hover border */
+}
+
+/* This targets the image container to keep them all the same size */
+.ws-img {
+    width: 100%;
+    height: 180px; /* Fixed height for all images */
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.ws-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This prevents images from stretching/distorting */
+}
+
+.ws-content h4 {
+    color: var(--primary);
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.ws-content p {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* IMPORTANT: Remove any code that looks like this if it exists in your file:
+   .workshop-box:first-child { ... } 
+   This is usually what causes the first box to look different. */
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+    .workshop-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+    .workshop-grid, .project-list { grid-template-columns: 1fr; }
+}

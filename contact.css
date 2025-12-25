@@ -1,0 +1,195 @@
+:root {
+    --primary: #2d3e30;
+    --accent: #f2a93b;
+    --bg-color: #f4eee0;
+    --text-main: #2d3e30;
+    --white: #ffffff;
+    --gray-light: #e0d9cc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Floating Navigation */
+.floating-nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--white);
+    padding: 10px 30px;
+    border-radius: 50px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+
+.floating-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.floating-nav a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.floating-nav .active a {
+    background: var(--text-main);
+    color: var(--white);
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+/* Contact Page Backdrop - Updated to match the light theme in the photo */
+.contact-page-body {
+    background-color: #f4eee0; /* Soft off-white background from your palette */
+    min-height: 100vh;
+    color: #1a1a1a; /* Dark text for readability against light BG */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-wrapper {
+    width: 100%;
+    max-width: 1000px;
+    padding: 150px 20px 60px; /* Extra top padding for the floating nav */
+    text-align: center;
+}
+
+.main-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+}
+
+.title-underline {
+    width: 80px;
+    height: 5px;
+    background: #f2a93b; /* Amber accent underline */
+    margin: 0 auto 50px;
+    border-radius: 10px;
+}
+
+/* Container - Updated to a clean white card with soft shadows like the photo */
+.glass-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    background: #ffffff; /* Solid white card */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05); /* Soft, modern shadow */
+    border-radius: 30px; /* Rounded corners like the photo templates */
+    overflow: hidden;
+    text-align: left;
+    border: none;
+}
+
+/* Left Panel - Darker accent section using your green */
+.info-panel {
+    background: #2d3e30; /* Deep Forest Green from your palette */
+    padding: 50px;
+    color: #ffffff;
+}
+
+.info-panel h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #f2a93b; /* Amber heading for contrast */
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: #f2a93b; /* Amber icons */
+}
+
+.info-item a, .info-item p {
+    color: #f4eee0;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.info-item a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Right Panel / Form - Clean and light */
+.form-panel {
+    padding: 50px;
+    background: #ffffff;
+}
+
+.form-panel form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-panel input, .form-panel textarea {
+    background: #f4eee0; /* Light cream input fields */
+    border: 1px solid #e0d9cc;
+    padding: 18px 20px;
+    border-radius: 15px;
+    color: #1a1a1a;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+.form-panel input:focus, .form-panel textarea:focus {
+    border-color: #f2a93b; /* Amber focus border */
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(242, 169, 59, 0.1);
+}
+
+/* Submit Button - Styled like the 'Hire Me' button in the photo */
+.submit-btn {
+    background: #1a1a1a; /* Dark button like the photo */
+    color: #ffffff;
+    border: none;
+    padding: 16px 35px;
+    border-radius: 50px; /* Pill-shaped button */
+    font-weight: 700;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background: #2d3e30;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+    .glass-container {
+        grid-template-columns: 1fr;
+    }
+    .info-panel, .form-panel {
+        padding: 30px;
+    }
+}
